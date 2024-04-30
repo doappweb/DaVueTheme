@@ -1,0 +1,34 @@
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /app/
+
+  # BLOCK 1
+  # If the link does not contain the word 'dist'
+  RewriteCond %{REQUEST_URI} !/dist/
+  # adding it
+  RewriteRule ^(.*)$ dist/$1 [L]
+  # directive [L] = finishing the conversion, trying to get a resource
+
+  # BLOCK 2
+  # if the result returned is not a file
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # and not the directory
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # rewriting the entire link to the path to index.html
+  RewriteRule . /app/dist/index.html [L]
+  # directive [L] = finishing the conversion, trying to get a resource
+
+</IfModule>
+
+# A less flexible alternative to Block 2
+# In case there is no mod_rewrite,
+# this will not function as intended, but it will at least prevent a 500 error.
+<IfModule !mod_rewrite.c>
+    FallbackResource /app/dist/index.html
+</IfModule>

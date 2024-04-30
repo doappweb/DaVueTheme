@@ -1,0 +1,52 @@
+## IDE specific items
+# Eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+
+# VSCode
+.vscode
+
+# IntelliJ Idea
+*.iml
+*.ipr
+*.iws
+.idea/
+.phpstorm.meta.php
+
+# NetBeans
+nbproject/
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+tags
+# Windows
+Thumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+
+# Microsoft Visual Studio
+*.sln
+*.suo
+*.phpproj

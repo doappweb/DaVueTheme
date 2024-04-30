@@ -1,0 +1,1 @@
+{da_smarty_handler dataKey='dashletHeader' dataSrc='tpl_vars'}

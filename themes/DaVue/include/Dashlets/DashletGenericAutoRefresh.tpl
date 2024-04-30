@@ -1,0 +1,1 @@
+{*** This template has been redefined so that extra code does not get into the contents of dashlets ***}

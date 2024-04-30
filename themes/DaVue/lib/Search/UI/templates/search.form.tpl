@@ -1,0 +1,1 @@
+{*This template has been redefined so as not to display unnecessary garbage in the response to the request*}

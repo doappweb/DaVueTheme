@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[4201],{54201:function(e,c,p){e.exports=p.p+"fonts/suitepicon.ccc50fd1.woff2"}}]);

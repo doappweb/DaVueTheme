@@ -1,0 +1,1 @@
+console.log('themes/DaVue/assets/style.js is ready');

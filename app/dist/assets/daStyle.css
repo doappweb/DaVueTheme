@@ -1,0 +1,40 @@
+/******************
+!!! ATTENTION !!!
+This file was created only for the preloader, because it starts before
+the Vue engine is activated.
+doApp Team
+*******************/
+
+.app-preloader {
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #f4f6f9;
+    height: 100vh;
+    width: 100%;
+    transition: opacity 300ms linear;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+
+    animation: color-change 2s infinite;
+}
+
+.dark-mode .app-preloader {
+    background-color: #454d55 !important;
+    color: #fff;
+}
+
+.animation__shake {
+    -webkit-animation: shake 1500ms;
+    animation: shake 1500ms;
+}
+
+@keyframes color-change {
+    0% { color: #dc3545; }
+    25% { color: #007bff; }
+    50% { color: #17a2b8; }
+    75% { color: #28a745; }
+    100% { color: #dc3545; }
+}
+
