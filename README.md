@@ -70,4 +70,4 @@ and much more…
  #### What you are not allowed to do with DaVueTheme.
  - The work is provided "as is". You may not hold the author liable.
 
- Contacts: [doappweb.com](https://doappweb.com) E-mail: info@doappweb.com
+ Contacts: [doappweb.com](https://doappweb.com)
