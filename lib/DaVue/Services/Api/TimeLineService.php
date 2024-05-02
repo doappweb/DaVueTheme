@@ -27,6 +27,7 @@ class TimeLineService
 
         global $current_language;
         $mod_strings = return_module_language($current_language, 'Activities');
+        $mod_strings_cases = return_module_language($current_language, 'AOP_Case_Updates');
 
         global $app_strings;
         global $app_list_strings;
@@ -287,6 +288,76 @@ class TimeLineService
             }
         } // end Notes
 
+        // Case Update List
+        if('Cases' == $arg['module_name']){
+            $update_list = array();
+            $updates = $focus->get_linked_beans('aop_case_updates', 'AOP_Case_Updates');
+            if ($updates) {
+                usort(
+                    $updates,
+                    function ($a, $b) {
+                        $aDate = $a->fetched_row['date_entered'];
+                        $bDate = $b->fetched_row['date_entered'];
+                        if ($aDate < $bDate) {
+                            return 1;
+                        } elseif ($aDate > $bDate) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                );
+
+                foreach ($updates as $update) {
+                    $updateOptions = array();
+
+                    if ($update->assigned_user_id) {
+                        $updateOptions['creatorName'] = $update->getUpdateUser()->name;
+                        if ($update->internal) {
+                            $updateOptions['type'] = 'caseStyleInternal';
+                            $updateOptions['status'] = $mod_strings_cases['LBL_INTERNAL'];
+                        } else {
+                            $updateOptions['type'] = 'caseStyleUser';
+                            $updateOptions['status'] = $mod_strings_cases['LBL_MODULE_NAME'];
+                        }
+                    } elseif ($update->contact_id) {
+                        $updateOptions['creatorName'] = $update->getUpdateContact()->name;
+                        $updateOptions['type'] = 'caseStyleContact';
+                    } else {
+                        continue;
+                    }
+
+                    $updateOptions['id'] =$update->id;
+                    $updateOptions['description'] = nl2br(html_entity_decode($update->description));
+                    $updateOptions['date_entered'] = $update->date_entered;
+
+                    $ts = $timedate->fromDb($update->fetched_row['date_entered'])->ts;
+
+                    $updateOptions['attachments'] = array();
+                    $notes = $update->get_linked_beans('notes', 'Notes');
+                    if ($notes) {
+                        foreach ($notes as $note) {
+                            $updateOptions['attachments'][$note->id] = $note->filename;
+                        }
+                    }
+                    $update_list[] = array(
+                        'id' => $update->id,
+                        'type' => $updateOptions['status'],
+                        'module' => 'Cases',
+                        'class' =>  $updateOptions['type'],
+                        'contact_name' => $updateOptions['creatorName'],
+                        'date_modified' => $updateOptions['date_entered'],
+                        'description' => $updateOptions['description'],
+                        'attachments' => $updateOptions['attachments'],
+                        'sort_value' => $ts,
+                        'acl' => array(
+                            'detail' => true,
+                            'edit'   => false,
+                            'delete' => false
+                        )
+                    );
+                }
+            }
+        }
 
         if (count($summary_list) > 0) {
             array_multisort(array_column($summary_list, 'sort_value'), SORT_DESC, $summary_list);
@@ -306,7 +377,7 @@ class TimeLineService
             }
         }
 
-        return array(
+        $result_array = array(
             'summary_list'  =>  $summary_list,
             'task_list'     =>  $task_list,
             'meeting_list'  =>  $meeting_list,
@@ -314,6 +385,18 @@ class TimeLineService
             'emails_list'   =>  $emails_list,
             'notes_list'    =>  $notes_list,
         );
+
+        // Case Update List
+        if('Cases' == $arg['module_name']){
+            $update_summary_list = array_merge($summary_list, $update_list);
+            if (count($update_summary_list) > 0) {
+                array_multisort(array_column($update_summary_list, 'sort_value'), SORT_DESC, $update_summary_list);
+            }
+            $result_array['update_summary'] = $update_summary_list;
+            $result_array['update_list'] = $update_list;
+        }
+
+        return $result_array;
     }
 
     /**

@@ -11,8 +11,8 @@ $manifest = array(
             'CE', 'PRO', 'ENT', 'CORP', 'ULT',
         ),
     'author' => 'doApp',
-    'version' => '1.0.0-beta build:1714598826',
-    'published_date' => '2024-05-02 00:27:09',
+    'version' => '1.0.0-beta build:1714677871',
+    'published_date' => '2024-05-02 22:24:37',
 );
 
 $installdefs = array(

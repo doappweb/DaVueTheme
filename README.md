@@ -4,7 +4,7 @@ Reactive theme for SuiteCRM 7.x, is a simple downloadable module and is compatib
 
 * **Client-Driven Design Improvements**: Incorporates design enhancements based on a decade of client feedback and wishes.
 * **VueJS 3 Engine**: Utilizes the latest VueJS 3 engine for enhanced interactivity and responsiveness.
-* **Backward Compatibility**: Fully compatible with SuiteCRM 7.10.16++, SuiteCRM 7.11.4++, ensuring smooth integration with existing systems.
+* **Backward Compatibility**: Fully compatible with SuiteCRM 7.11.5++, ensuring smooth integration with existing systems.
 * **Easy Installation**: Simple .zip distribution, easily installable through Module Loader, allowing for hassle-free setup.
 * **Link Compatibility**: Maintains compatibility with all existing links, ensuring seamless transition between old and new interfaces.
 * **Parallel Use with Standard Design**: Offers the flexibility to use DaVueTheme alongside the standard SuiteCRM design.
@@ -12,7 +12,7 @@ Reactive theme for SuiteCRM 7.x, is a simple downloadable module and is compatib
  
 and much more…
 
-## Compatibility with PHP and SuiteCRM versions
+## Compatibility current release with PHP and SuiteCRM versions
 
 ### 7.11.x
 |         | PHP | СRM  | Theme  |

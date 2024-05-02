@@ -356,68 +356,6 @@ class FieldFunctions
         return $fieldDef;
     }
 
-    /**
-     * @see modules/AOP_Case_Updates/Case_Updates.php
-     */
-    private function display_updates(array $fieldDef, SugarBean $focus): array
-    {
-        if (empty($focus->id)) {
-            return $fieldDef;
-        }
-
-        $fieldDef['value'] = array();
-
-        $updates = $focus->get_linked_beans('aop_case_updates', 'AOP_Case_Updates');
-        if ($updates) {
-            usort(
-                $updates,
-                function ($a, $b) {
-                    $aDate = $a->fetched_row['date_entered'];
-                    $bDate = $b->fetched_row['date_entered'];
-                    if ($aDate < $bDate) {
-                        return -1;
-                    } elseif ($aDate > $bDate) {
-                        return 1;
-                    }
-                    return 0;
-                }
-            );
-
-            foreach ($updates as $update) {
-                $updateOptions = array();
-
-                if ($update->assigned_user_id) {
-                    $updateOptions['creatorName'] = $update->getUpdateUser()->name;
-                    if ($update->internal) {
-                        $updateOptions['type'] = 'caseStyleInternal';
-                    } else {
-                        $updateOptions['type'] = 'caseStyleUser';
-                    }
-                } elseif ($update->contact_id) {
-                    $updateOptions['creatorName'] = $update->getUpdateContact()->name;
-                    $updateOptions['type'] = 'caseStyleContact';
-                } else {
-                    continue;
-                }
-
-                $updateOptions['id'] =$update->id;
-                $updateOptions['description'] = nl2br(html_entity_decode($update->description));
-                $updateOptions['date_entered'] = $update->date_entered;
-
-                $updateOptions['attachments'] = array();
-                $notes = $update->get_linked_beans('notes', 'Notes');
-                if ($notes) {
-                    foreach ($notes as $note) {
-                        $updateOptions['attachments'][$note->id] = $note->filename;
-                    }
-                }
-
-                $fieldDef['value'][] = $updateOptions;
-            }
-        }
-
-        return $fieldDef;
-    }
 
     /**
      * @see modules/Surveys/Utils/utils.php
