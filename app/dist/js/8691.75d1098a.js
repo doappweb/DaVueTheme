@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[8691],{48691:function(e,p,c){e.exports=c.p+"img/suitepicon.f1ca2aa0.svg"}}]);

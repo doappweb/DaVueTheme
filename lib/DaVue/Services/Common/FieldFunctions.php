@@ -356,6 +356,58 @@ class FieldFunctions
         return $fieldDef;
     }
 
+    /**
+     * @see modules/AOP_Case_Updates/Case_Updates.php
+     */
+    private function display_updates(array $fieldDef, SugarBean $focus): array
+    {
+        if (empty($focus->id)) {
+            return $fieldDef;
+        }
+
+        global $current_language;
+        $mod_strings_cases = return_module_language($current_language, 'AOP_Case_Updates');
+
+        $fieldDef['value'] = array();
+
+        $updates = $focus->get_linked_beans('aop_case_updates', 'AOP_Case_Updates', 'date_entered DESC');
+
+        if ($updates) {
+            foreach ($updates as $update) {
+                $updateOptions = array();
+
+                if ($update->assigned_user_id) {
+                    $updateOptions['creatorName'] = $update->getUpdateUser()->name;
+                    if ($update->internal) {
+                        $updateOptions['type'] = $mod_strings_cases['LBL_INTERNAL'];
+                    } else {
+                        $updateOptions['type'] = $mod_strings_cases['LBL_MODULE_NAME'];
+                    }
+                } elseif ($update->contact_id) {
+                    $updateOptions['creatorName'] = $update->getUpdateContact()->name;
+                    $updateOptions['type'] = 'caseStyleContact';
+                } else {
+                    continue;
+                }
+
+                $updateOptions['id'] =$update->id;
+                $updateOptions['description'] = nl2br(html_entity_decode($update->description));
+                $updateOptions['date_entered'] = $update->date_entered;
+
+                $updateOptions['attachments'] = array();
+                $notes = $update->get_linked_beans('notes', 'Notes');
+                if ($notes) {
+                    foreach ($notes as $note) {
+                        $updateOptions['attachments'][$note->id] = $note->filename;
+                    }
+                }
+
+                $fieldDef['value'][] = $updateOptions;
+            }
+        }
+
+        return $fieldDef;
+    }
 
     /**
      * @see modules/Surveys/Utils/utils.php

@@ -1,7 +1,0 @@
-"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[546],{20546:function(e,n,t){t.r(n),t.d(n,{allDay:function(){return l},createEvent:function(){return M},dateFormat:function(){return v},day:function(){return d},default:function(){return y},deleteEvent:function(){return m},month:function(){return i},months:function(){return r},noEvent:function(){return f},today:function(){return s},week:function(){return c},weekDays:function(){return o},year:function(){return u},years:function(){return a}});
-/**
-  * vue-cal v4.8.1
-  * (c) 2022 Antoni Andre <antoniandre.web@gmail.com>
-  * @license MIT
-  */
-const o=["Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica"],r=["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],a="Anni",u="Anno",i="Mese",c="Settimana",d="Giorno",s="Oggi",f="Nessun evento",l="Tutto il giorno",m="Cancella",M="Crea evento",v="dddd D MMMM YYYY",y={weekDays:o,months:r,years:"Anni",year:"Anno",month:"Mese",week:"Settimana",day:"Giorno",today:"Oggi",noEvent:"Nessun evento",allDay:"Tutto il giorno",deleteEvent:"Cancella",createEvent:"Crea evento",dateFormat:"dddd D MMMM YYYY"}}}]);

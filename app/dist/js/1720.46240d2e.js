@@ -1,7 +1,0 @@
-"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[1720],{51720:function(e,t,n){n.r(t),n.d(t,{allDay:function(){return p},createEvent:function(){return f},dateFormat:function(){return l},day:function(){return c},default:function(){return y},deleteEvent:function(){return v},month:function(){return d},months:function(){return r},noEvent:function(){return m},today:function(){return i},week:function(){return s},weekDays:function(){return u},year:function(){return o},years:function(){return a}});
-/**
-  * vue-cal v4.8.1
-  * (c) 2022 Antoni Andre <antoniandre.web@gmail.com>
-  * @license MIT
-  */
-const u=["Esmaspäev","Teisipäev","Kolmapäev","Neljapäev","Reede","Laupäev","Pühapäev"],r=["Jaanuar","Veebruar","Märts","Aprill","Mai","Juuni","Juuli","August","September","Oktoober","November","Detsember"],a="Aastad",o="Aasta",d="Kuu",s="Nädal",c="Päev",i="Täna",m="Sündmus puudub",p="Terve päev",v="Kustuta",f="Loo sündmus",l="dddd D MMMM YYYY",y={weekDays:u,months:r,years:"Aastad",year:"Aasta",month:"Kuu",week:"Nädal",day:"Päev",today:"Täna",noEvent:"Sündmus puudub",allDay:"Terve päev",deleteEvent:"Kustuta",createEvent:"Loo sündmus",dateFormat:"dddd D MMMM YYYY"}}}]);

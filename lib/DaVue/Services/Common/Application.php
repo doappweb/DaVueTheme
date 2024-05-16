@@ -242,6 +242,223 @@ class Application
         return $user;
     }
 
+
+    /**
+     * User Config
+     */
+    public function getExtConfig(): array
+    {
+        return [
+            'modules' => [
+                'Home' => [
+                    'actions' => [
+                        'ListView'      => true,
+                        'UnifiedSearch' => true,
+                        'About'         => true,
+                    ],
+                    'subMenu' => [
+                        'addDashlet' => [
+                            'css_key' => 'add-dashlet',
+                            'lbl' => [
+                                'name'   => 'LBL_ADD_DASHLETS',
+                                'module' => '',
+                            ],
+                            'click' => 'addDashlet',
+                        ],
+                        'addPage' => [
+                            'css_key' => 'add-page',
+                            'lbl' => [
+                                'name'   => 'LBL_ADD_TAB',
+                                'module' => '',
+                            ],
+                            'click' => 'addTab',
+                        ],
+                        'renamePage' => [
+                            'css_key' => 'rename-page',
+                            'lbl' => [
+                                'name'   => 'LBL_DA_RENAME_TAB',
+                                'module' => '',
+                            ],
+                            'click' => 'renameTab',
+                        ],
+                        'deletePage' => [
+                            'css_key' => 'delete-page',
+                            'lbl' => [
+                                'name'   => 'LBL_DA_REMOVE_TAB',
+                                'module' => '',
+                            ],
+                            'click' => 'removeTab',
+                        ],
+                    ]
+                ],
+                'Users' => [
+                    'actions' => [
+                        'EditView' => true,
+                        'Login'    => true,
+                    ],
+                ],
+                'Calls' => [
+                    'actions' => [
+                        'EditView' => true,
+                    ],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Calls'),
+                        'Calendar' => $this->getSubMenuCalendar(),
+                    ]
+                ],
+                'Meetings' => [
+                    'actions' => [
+                        'EditView' => true,
+                    ],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Meetings'),
+                        'Calendar' => $this->getSubMenuCalendar(),
+                    ]
+                ],
+                'Tasks' => [
+                    'actions' => (object)[],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Tasks'),
+                        'Calendar' => $this->getSubMenuCalendar(),
+                    ]
+                ],
+                'Opportunities' => [
+                    'actions' => (object)[],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Opportunities'),
+                    ]
+                ],
+                'Leads' => [
+                    'actions' => (object)[],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Leads'),
+                    ]
+                ],
+                'Bugs' => [
+                    'actions' => (object)[],
+                    'subActions' => [
+                        'Kanban' => [
+                            'requestOff' => false
+                        ],
+                    ],
+                    'subMenu' => [
+                        'Kanban' => $this->getSubMenuKanban('Bugs'),
+                    ]
+                ],
+                'Project' => [
+                    'actions' => [
+                        'view_GanttChart' => true
+                    ],
+                ],
+                'FP_events' => [
+                    'actions' => (object)[],
+                    'subMenu' => [
+                        'Calendar' => $this->getSubMenuCalendar(),
+                    ]
+                ],
+                'Calendar' => [
+                    'actions' => [
+                        'ListView' => true
+                    ],
+                    'subMenu' => [
+                        'Today' => [
+                            'css_key' => 'today',
+                            'lbl' => [
+                                'name'   => 'LBL_TODAY',
+                                'module' => 'Home',
+                            ],
+                            'click' => false,
+                            'query' => [
+                                'module' => 'Calendar',
+                                'action' => 'ListView',
+                            ],
+                        ],
+                    ]
+                ],
+                'AOR_Reports' => [
+                    'actions' => [
+                        'DetailView' => true
+                    ],
+                ],
+                'MergeRecords' => [
+                    'actions' => [
+                        'Step1' => true
+                    ],
+                ],
+                'Administration' => [
+                    'actions' => [
+                        'Index' => true
+                    ],
+                ],
+                'Cases' => [
+                    'actions' => [
+                        'EditView' => true,
+                    ],
+                ],
+            ]
+        ];
+    }
+
+
+    private function getSubMenuCalendar(): array
+    {
+        return [
+            'css_key' => 'schedule-calendar',
+            'lbl' => [
+                'name'   => 'LBL_MODULE_NAME',
+                'module' => 'Calendar',
+            ],
+            'click' => false,
+            'query' => [
+                'module' => 'Calendar',
+                'action' => 'ListView',
+            ],
+        ];
+    }
+
+    /**
+     * @param string $moduleName
+     * @return array
+     */
+    private function getSubMenuKanban(string $moduleName): array
+    {
+        return [
+            'css_key' => 'kanban',
+            'lbl' => 'Kanban',
+            'click' => false,
+            'query' => [
+                'module'    => $moduleName,
+                'action'    => 'ListView',
+                'subAction' => 'Kanban'
+            ]
+        ];
+    }
+
     /**
      * @see include/MVC/View/SugarView.php
      */

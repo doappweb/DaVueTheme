@@ -1,0 +1,1 @@
+{******** THIS TEMPLATE IS A STUB ******}

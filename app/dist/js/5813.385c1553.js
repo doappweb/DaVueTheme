@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[5813],{15813:function(e,p,f){e.exports=f.p+"fonts/SSPFont6.84d4affa.woff2"}}]);

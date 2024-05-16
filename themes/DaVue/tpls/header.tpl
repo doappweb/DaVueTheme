@@ -1,14 +1,15 @@
 {if $AUTHENTICATED}
 {if !$smarty.server.HTTP_X_DA_VUE_AJAX}
-<script>
-    let frontLink = '{da_rout_redirect}'
-    {literal}
-    if (frontLink) {
-        console.log('REDIRECT TO FRONT')
-        location.replace(frontLink);
-    }
-    {/literal}
-</script>
+{*<script>*}
+    {da_rout_redirect}
+{*    let frontLink = '{da_rout_redirect}'*}
+{*    {literal}*}
+{*    if (frontLink) {*}
+{*        console.log('REDIRECT TO FRONT')*}
+{*        location.replace(frontLink);*}
+{*    }*}
+{*    {/literal}*}
+{*</script>*}
 {/if}
 {da_app_init}
 %%%%%%start themes/DaVue/tpls/header.tpl%%%%%%<br>

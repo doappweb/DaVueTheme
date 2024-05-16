@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[5169],{15169:function(e,r,n){n.r(r),n.d(r,{default:function(){return i}});var t=n(73396);function u(e,r,n,u,a,c){return(0,t.wg)(),(0,t.iD)("div")}var a={name:"HomeListFooter"},c=n(40089);const o=(0,c.Z)(a,[["render",u]]);var i=o}}]);

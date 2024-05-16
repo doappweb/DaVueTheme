@@ -6,6 +6,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $sugar_config, $app_strings;
 
+ini_set('display_errors', 0);
 $sugar_config['allowed_preview'] = array();
 $sugar_config['disableAjaxUI'] = true;
 

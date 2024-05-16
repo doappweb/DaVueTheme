@@ -4,6 +4,7 @@ use SuiteCRM\DaVue\Services\Api;
 
 return [
     'getApp' => Api\AppService::class,
+    'getExtConfig' => Api\AppService::class,
     'getUserThemeSettings' => Api\AppService::class,
     'setUserThemeSettings' => Api\AppService::class,
     'getAdditionalDetails' => Api\AppService::class,

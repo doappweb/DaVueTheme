@@ -36,6 +36,10 @@ class ApiController implements ControllerInterface
     public function response(): void
     {
         $this->generateResponse();
+        // Clean all buffers
+        foreach (ob_get_status(true) as $ignored){
+            ob_end_clean();
+        }
         $response = json_encode($this->response);
         echo html_entity_decode($response, ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8');
         exit();

@@ -32,7 +32,19 @@ class SmartyHandler
 
         if (method_exists($this, $methodName)) {
             if ($params) {
-                $response = json_encode($this->$methodName($params));
+
+                // Data compatibility with 7.14.x
+                $cleanData = [];
+                foreach ($params as $key => $val) {
+                    if (is_object($val)){
+                        $cleanData[$key] = $val->value;
+                    } else {
+                        $cleanData = $params;
+                        break;
+                    }
+                }
+
+                $response = json_encode($this->$methodName($cleanData));
             } else {
                 $response = json_encode($this->$methodName());
             }

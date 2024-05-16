@@ -1,7 +1,0 @@
-"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[9360],{9360:function(e,n,t){t.r(n),t.d(n,{allDay:function(){return f},createEvent:function(){return y},dateFormat:function(){return l},day:function(){return i},default:function(){return k},deleteEvent:function(){return p},month:function(){return o},months:function(){return u},noEvent:function(){return m},today:function(){return d},week:function(){return c},weekDays:function(){return r},year:function(){return s},years:function(){return a}});
-/**
-  * vue-cal v4.8.1
-  * (c) 2022 Antoni Andre <antoniandre.web@gmail.com>
-  * @license MIT
-  */
-const r=["Hétfo","Kedd","Szerda","Csütörtök","Péntek","Szombat","Vasárnap"],u=["Január","Február","Március","Április","Május","Június","Július","Augusztus","Szeptember","Október","November","December"],a="Évek",s="Év",o="Hónap",c="Hét",i="Nap",d="Mai nap",m="Nincs esemény",f="Egész nap",p="Esemény törlese",y="Esemény létrehozása",l="dddd D MMMM YYYY",k={weekDays:r,months:u,years:"Évek",year:"Év",month:"Hónap",week:"Hét",day:"Nap",today:"Mai nap",noEvent:"Nincs esemény",allDay:"Egész nap",deleteEvent:"Esemény törlese",createEvent:"Esemény létrehozása",dateFormat:"dddd D MMMM YYYY"}}}]);

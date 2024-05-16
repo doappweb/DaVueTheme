@@ -37,6 +37,13 @@ class AppService
         ];
     }
 
+    public function getExtConfig(array $arg = []): array
+    {
+        return [
+            'ext_config' => $this->application->getExtConfig(),
+        ];
+    }
+
     /**
      * @usage http://localhost/app/?VueAjax=true&method=getUserThemeSettings&module=Home&action=ListView
      * @param $args

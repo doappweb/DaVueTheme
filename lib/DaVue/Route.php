@@ -51,7 +51,10 @@ class Route
             }
         }
 
-        echo $redirectLink;
+        if ($redirectLink) {
+            header('Location: '. $redirectLink);
+//        echo $redirectLink;
+        }
     }
 }
 

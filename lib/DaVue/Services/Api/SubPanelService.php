@@ -66,7 +66,7 @@ class SubPanelService
         $spd = new SubPanelDefinitions($bean);
         $aSubPanelObject = $spd->load_subpanel($subpanel, false, false, '', $collection);
         $subpanel_object = new SubPanel($module, $record, $subpanel, $aSubPanelObject, $layout_def_key, $collection);
-        $subpanel_object->setTemplateFile('.tpl');
+        $subpanel_object->setTemplateFile('tpls/empty.tpl');
         ob_start();
         $subpanel_object->display(false);
         ob_end_clean();

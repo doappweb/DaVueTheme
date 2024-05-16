@@ -1,4 +1,4 @@
-# DaVueTheme 1.0.0-beta
+# DaVueTheme 1.0.1-beta
 
 Reactive theme for SuiteCRM 7.x, is a simple downloadable module and is compatible with the standard out of the box design.
 
@@ -17,7 +17,6 @@ and much more…
 ### 7.11.x
 |         | PHP | СRM  | Theme  |
 |:-------:|:---:|:----:|:------:|
-| 7.11.5  | 7.3 | true | false  |
 | 7.11.6  | 7.3 | true |  true  |
 | 7.11.19 | 7.3 | true |  true  |
 | 7.11.19 | 7.4 | true |  true  |
@@ -25,33 +24,30 @@ and much more…
 | 7.11.23 | 7.4 | true |  true  |
 
 ### 7.12.x
-|         | PHP |  СRM   |  Theme  |
-|:-------:|:---:|:------:|:-------:|
-| 7.12.0  | 7.3 |  true  |  true   |
-| 7.12.0  | 7.4 |  true  |  true   |
-| 7.12.0  | 8.0 | true\* |  false  |
-| 7.12.5  | 7.3 |  true  |  true   |
-| 7.12.5  | 7.4 |  true  |  true   |
-| 7.12.5  | 8.0 | true\* |  true   |
-| 7.12.14 | 7.3 |  true  |  true   |
-| 7.12.14 | 7.4 |  true  |  true   |
-| 7.12.14 | 8.0 | true\* |  true   |
+|         | PHP | СRM  | Theme |
+|:-------:|:---:|:----:|:-----:|
+| 7.12.0  | 7.3 | true | true  |
+| 7.12.0  | 7.4 | true | true  |
+| 7.12.0  | 8.0 | true | true  |
+| 7.12.14 | 7.3 | true | true  |
+| 7.12.14 | 7.4 | true | true  |
+| 7.12.14 | 8.0 | true | true  |
 
 ### 7.13.x
-|        | PHP |   СRM   | Theme  |
-|:------:|:---:|:-------:|:------:|
-| 7.13.1 | 7.4 |  true   |  true  |
-| 7.13.1 | 8.0 | true\*  |  true  |
-| 7.13.4 | 7.4 |  true   |  true  |
-| 7.13.4 | 8.0 | true\*  |  true  |
+|        | PHP | СRM  | Theme  |
+|:------:|:---:|:----:|:------:|
+| 7.13.1 | 7.4 | true |  true  |
+| 7.13.1 | 8.0 | true |  true  |
+| 7.13.4 | 7.4 | true |  true  |
+| 7.13.4 | 8.0 | true |  true  |
 
 ### 7.14.x
-|        | PHP |  СRM   | Theme |
-|:------:|:---:|:------:|:-----:|
-| 7.14.0 | 8.1 | true\* | false |
-| 7.14.0 | 8.2 | true\* | false |
-
-*_many warnings & notices_
+|        | PHP |  СRM  | Theme |
+|:------:|:---:|:-----:|:-----:|
+| 7.14.0 | 8.1 | true  | true  |
+| 7.14.0 | 8.2 | true  | true  |
+| 7.14.3 | 8.1 | true  | true  |
+| 7.14.3 | 8.2 | true  | true  |
 
 ### Usage Rights
 

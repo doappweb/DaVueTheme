@@ -12,9 +12,6 @@ class SmartyController implements ControllerInterface
     /** @var App */
     private $app;
 
-    /** @var SmartyData $smartyData */
-    private $smartyData;
-
     private $response = [];
     private $tplData = [];
     private $sugarNotice = [];
@@ -40,8 +37,20 @@ class SmartyController implements ControllerInterface
 
     public function response(): void
     {
-        $this->smartyData = $this->app->getService('@SmartyData');
-        $this->tplData = $this->smartyData->getCollection();
+        $smartyData = $this->app->getService('@SmartyData');
+
+        // Data compatibility with 7.14.x
+        $rawData = $smartyData->getCollection();
+        foreach ($rawData as $tpl => $data) {
+            foreach ($data as $key => $val) {
+                if (is_object($val)){
+                    $this->tplData[$tpl][$key] = $val->value;
+                } else {
+                    $this->tplData[$tpl] = $data;
+                    break;
+                }
+            }
+        }
 
         $this->compatibilityHooks();
         $this->setPageContent();
@@ -55,7 +64,7 @@ class SmartyController implements ControllerInterface
 
     private function generateResponse()
     {
-        $builder = new SmartyDataBuilder($this->app, $this->smartyData->getCollection());
+        $builder = new SmartyDataBuilder($this->app, $this->tplData);
 
         $this->response = [
             'app' => [

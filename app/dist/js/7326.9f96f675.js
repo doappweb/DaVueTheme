@@ -1,7 +1,0 @@
-"use strict";(self["webpackChunkdoapp_crmtheme"]=self["webpackChunkdoapp_crmtheme"]||[]).push([[7326],{47326:function(n,r,e){e.r(r),e.d(r,{allDay:function(){return l},createEvent:function(){return m},dateFormat:function(){return y},day:function(){return c},default:function(){return M},deleteEvent:function(){return s},month:function(){return i},months:function(){return u},noEvent:function(){return g},today:function(){return f},week:function(){return o},weekDays:function(){return t},year:function(){return d},years:function(){return a}});
-/**
-  * vue-cal v4.8.1
-  * (c) 2022 Antoni Andre <antoniandre.web@gmail.com>
-  * @license MIT
-  */
-const t=["Mánudagur","Þriðjudagur","Miðvikudagur","Fimmtudagur","Föstudagur","Laugardagur","Sunnudagur"],u=["Janúar","Febrúar","Mars","Apríl","Maí","Júní","Júlí","Ágúst","September","Október","Nóvember","Desember"],a="Ár",d="Ár",i="Mánuður",o="Vika",c="Dagur",f="Í dag",g="Enginn atburður",l="Allan daginn",s="Eyða",m="Búðu til viðburð",y="dddd D MMMM YYYY",M={weekDays:t,months:u,years:"Ár",year:"Ár",month:"Mánuður",week:"Vika",day:"Dagur",today:"Í dag",noEvent:"Enginn atburður",allDay:"Allan daginn",deleteEvent:"Eyða",createEvent:"Búðu til viðburð",dateFormat:"dddd D MMMM YYYY"}}}]);
